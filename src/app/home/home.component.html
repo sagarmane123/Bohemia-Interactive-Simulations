@@ -1,0 +1,23 @@
+<h2 *ngIf="weapons.length == 0">
+  {{title}}
+</h2>
+<br>
+<br>
+<div class="container" *ngIf="weapons.length > 0">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Weapon Configuration Name</th>
+      <th>Weapon Type</th>
+      <th>Weapon Optics</th>
+      <th>Weapon Ammunition</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let res of weapons">
+    <td>{{res?.weaponname}}</td>
+    <td>{{res?.weapontype}}</td>
+    <td>{{res?.weaponoptics}}</td>
+    <td>{{res?.weaponammunition}}</td>
+    </tbody>
+  </table>
+</div>

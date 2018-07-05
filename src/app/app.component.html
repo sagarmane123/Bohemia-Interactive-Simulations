@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</div>
+<div class="container">
+  <div class="btn-group btn-group-justified">
+    <a routerLink="/home" routerLinkActive="active" class="btn btn-primary">Home</a>
+    <a routerLink="/weapon" routerLinkActive="active" class="btn btn-primary">Weapon Configuration</a>
+    <a routerLink="/about" routerLinkActive="active" class="btn btn-primary">About Us</a>
+    <a routerLink="/contact" routerLinkActive="active" class="btn btn-primary">Contact US</a>
+  </div>
+  <router-outlet></router-outlet>
+
+  <footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="https://mdbootstrap.com/bootstrap-tutorial/"> Sagar Mane</a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+</div>
