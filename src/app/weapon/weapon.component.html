@@ -3,63 +3,58 @@
 </h2>
 
 <form>
-  <div class="form-group">
+  <div>
     <label >Weapon Configuration Name</label>
-    <input type="test" class="form-control"  placeholder="Weapon Configuration Name" #weaponName (keyup)="0"
-            required>
+    <input type="text" placeholder="Weapon Configuration Name" #weaponName (keyup)="0" required>
   </div>
 
-  <div class="form-group">
-    <label>Weapon Type</label>
-    <select class="form-control" #weaponType required="required" (change)="0">
+  <div>
+    <label for="weaponType">Weapon Type</label>
+    <select  #weaponType id="weaponType" required="required" (change)="0">
       <option value=""></option>
       <option value="m16">M-16</option>
       <option value="ak47">AK-47</option>
     </select>
   </div>
 
-  <div class="form-group">
-    <label>Weapon Optics</label>
-    <select class="form-control" #weaponOptics (change)="0" required>
+  <div>
+    <label for="weaponOptics">Weapon Optics</label>
+    <select #weaponOptics id="weaponOptics" (change)="0" required="required" >
       <option value=""></option>
       <option value="red-dot-scope">Red Dot Scope</option>
       <option value="acog-scope">Acog Scope</option>
     </select>
   </div>
 
-  <div class="form-group">
-    <label>Example select</label>
-    <select class="form-control" #weaponAmmunition (change)="0" required>
+  <div>
+    <label for="weaponAmmunition">Example select</label>
+    <select #weaponAmmunition id="weaponAmmunition" (change)="0" required="required" >
       <option value=""></option>
       <option value="30-round-magazine">30 Round Magazine</option>
       <option value="50-round-magazine">50 Round Magazine</option>
     </select>
   </div>
 
-  <button type="submit" class="btn btn-primary" (click)="open(weaponName.value,weaponType.value,weaponOptics.value,weaponAmmunition.value)">Submit</button>
+  <button type="submit" (click)="open(weaponName.value,weaponType.value,weaponOptics.value,weaponAmmunition.value)">Submit</button>
 
 </form>
 
 
 <section>
-  <article>
-    <h2 align="center">{{weaponName.value}}</h2>
-    <div class="row">
-      <div class="col-sm-4 " *ngIf="weaponType.value">
-        <h2 align="center">{{weaponType.value | uppercase}}</h2>
+  <h2>{{weaponName.value}}</h2>
+  <article class="grid-container">
+      <div *ngIf="weaponType.value">
+        <h2>{{weaponType.value | uppercase}}</h2>
         <img class="img-responsive" src="../assets/images/weapon/type/{{weaponType.value}}.jpg" />
       </div>
-      <div class="col-sm-4" *ngIf="weaponOptics.value">
-        <h2 align="center">{{weaponOptics.value | uppercase}}</h2>
+      <div *ngIf="weaponOptics.value">
+        <h2>{{weaponOptics.value | uppercase}}</h2>
         <img class="img-responsive" src="../assets/images/weapon/optics/{{weaponOptics.value}}.jpg" />
       </div>
-
-      <div class="col-sm-4" *ngIf="weaponAmmunition.value">
-        <h2 align="center">{{weaponAmmunition.value | uppercase}}</h2>
+      <div *ngIf="weaponAmmunition.value">
+        <h2>{{weaponAmmunition.value | uppercase}}</h2>
         <img class="img-responsive" src="../assets/images/weapon/ammunition/{{weaponAmmunition.value}}.jpg" />
       </div>
-
-    </div>
   </article>
 </section>
 
